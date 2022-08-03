@@ -9,13 +9,13 @@
       { "src": "/img/product/pro3.jpg" }
     ],
     "mainPrice": "190",
-    "colors": [],
+    "colors": ["blue", "red"],
     "category": ["furniture", "lamp"],
     "tags": ["furniture", "lamp"],
     "brand": "ikea",
     "stock": true,
     "id": "1",
-    "new": true,
+    "new": false,
     "sale": true
   },
   {

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Slider from "react-slick";
-import VideoPopUp from "../src/components/VideoPopUp";
 import Layout from "../src/layouts/Layout";
 import PageTitle from "../src/layouts/PageTitle";
 
@@ -20,7 +19,6 @@ const About = () => {
     <Layout sticky footerBg textCenter container>
       <main>
         <PageTitle pageHeading="About Us" active="About" />
-        {popup && <VideoPopUp closePopup={() => setPopup(false)} />}
         <section className="about-area pt-100">
           <div className="container">
             <div className="row">

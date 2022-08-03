@@ -1,21 +1,19 @@
 import Link from "next/link";
 import { useEffect } from "react";
-import { connect } from "react-redux";
-import Features from "../src/components/Features";
-import HomePageProducts from "../src/components/product/HomePageProducts";
-import HomeSlider from "../src/components/slider/HomeSlider";
-import ImageSlider from "../src/components/slider/ImageSlider";
-import Layout from "../src/layouts/Layout";
-import { getBlog } from "../src/redux/action/blog";
-import { getFeatures } from "../src/redux/action/features";
-import { getHome4 } from "../src/redux/action/home";
-import { getProducts } from "../src/redux/action/product";
+import { connect } from "react-redux"; // redux 연결
+import Features from "../src/components/Features"; // 아래쪽 features 컴포넌트
+import HomePageProducts from "../src/components/product/HomePageProducts"; // 중간에 상품리스트
+import HomeSlider from "../src/components/slider/HomeSlider"; // 최상단 그림 4개 슬라이더
+import ImageSlider from "../src/components/slider/ImageSlider"; // 맨 아래 인스타그램 슬라이더
+import Layout from "../src/layouts/Layout"; // 전체를 감싸는 레이아웃 (헤더, 푸터)
+import { getFeatures } from "../src/redux/action/features"; // data : API 로 공급 필요
+import { getHome4 } from "../src/redux/action/home"; // data : API 로 공급 필요
+import { getProducts } from "../src/redux/action/product"; // data : API 로 공급 필요
 
 const Index4 = ({
   getHome4,
   getFeatures,
   features,
-  getBlog,
   imageSlider,
   getProducts,
   products,
@@ -24,9 +22,9 @@ const Index4 = ({
   useEffect(() => {
     getHome4();
     getFeatures();
-    getBlog();
     getProducts();
   }, []);
+
   return (
     <Layout
       transparent
@@ -93,8 +91,6 @@ const Index4 = ({
             </HomeSlider>
           </div>
         </section>
-
-        {/* <Banner banner={banner} /> */}
         <HomePageProducts products={products} />
         <Features features={features} />
         <ImageSlider imageSlider={imageSlider} />
@@ -104,17 +100,14 @@ const Index4 = ({
 };
 
 const mapSateToProps = (state) => ({
-  banner: state.home.home4 && state.home.home4.banner,
   features: state.features,
   sliders: state.home.home4 && state.home.home4.sliders,
   imageSlider: state.home.home4 && state.home.home4.imageSlider,
-  // blogs: filterBlog("man", state.blog.blogs),
   products: state.product.products,
 });
 
 export default connect(mapSateToProps, {
   getHome4,
   getFeatures,
-  getBlog,
   getProducts,
 })(Index4);

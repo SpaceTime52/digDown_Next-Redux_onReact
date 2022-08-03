@@ -55,13 +55,6 @@ const Header = ({
               <div className="header-right f-right">
                 <ul>
                   <SearchTrigger />
-                  <li className="login-btn">
-                    <Link href="/login">
-                      <a>
-                        <i className="far fa-user" />
-                      </a>
-                    </Link>
-                  </li>
                   <ShopCart />
                 </ul>
               </div>

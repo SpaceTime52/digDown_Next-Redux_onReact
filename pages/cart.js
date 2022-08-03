@@ -14,7 +14,6 @@ import { totalPrice } from "../src/utils/utils";
 const Cart = ({ removeCart, addToCart, decreaseCart }) => {
   const carts = useSelector((state) => state.utilis.carts);
   const [cartValue, setCartValue] = useState(0);
-
   const [addCart, setaddCart] = useState(false);
 
   const onClickCart = (e, cart) => {
@@ -117,36 +116,7 @@ const Cart = ({ removeCart, addToCart, decreaseCart }) => {
                         </tbody>
                       </table>
                     </div>
-                    <div className="row">
-                      <div className="col-12">
-                        <div className="coupon-all">
-                          <div className="coupon">
-                            <form onSubmit={(e) => e.preventDefault()}>
-                              <input
-                                id="coupon_code"
-                                className="input-text"
-                                name="coupon_code"
-                                placeholder="Coupon code"
-                                type="text"
-                              />
-                              <button
-                                className="btn theme-btn-2"
-                                name="apply_coupon"
-                                type="submit"
-                                onClick={(e) => e.preventDefault()}
-                              >
-                                Apply coupon
-                              </button>
-                            </form>
-                          </div>
-                          <div className="coupon2">
-                            <Link href="/checkout">
-                              <a className="btn theme-btn">Submit</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
                     <div className="row">
                       <div className="col-md-5 ml-auto">
                         <div className="cart-page-total">

@@ -19,7 +19,7 @@ const CheckBox = ({
           value={values}
           className="mb-0"
         />
-
+        ㅈ
         <label htmlFor="remember" className="mb-0">
           {label ? label : "Remember me!"}
         </label>
